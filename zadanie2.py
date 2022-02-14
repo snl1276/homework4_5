@@ -31,7 +31,22 @@ persons = [
     {'name': 'Kiril', 'age': 27, 'gender': 'male'},
     {'name': 'Mihail', 'age': 30, 'gender': 'male'}
 ]
-print(len(persons))
+print('Количество людей:', len(persons))
 gender = [i['gender'] for i in persons]
 for k, v in Counter(gender).items():
     print(f'{k}: {v}')
+print('Всего совершеннолетних:')
+age = [i['age'] for i in persons if i['age'] >= 18]
+print(len(age))
+print('Список всех имен:')
+name = [i['name'] for i in persons]
+for k, v in Counter(name).items():
+    print(f'{k}', end=' ')
+print('\nОтсортированный список всех возрастов без повторений:')
+age = [i['age'] for i in persons]
+print(set(sorted(age)))
+
+
+print('Имена мужчин старше 35 лет:')
+name_men_over_35 = [i['name'] for i in persons if i['age'] >= 35 and i['gender'] == 'male']
+print(name_men_over_35)
