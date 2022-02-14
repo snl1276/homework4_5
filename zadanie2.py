@@ -32,5 +32,6 @@ persons = [
     {'name': 'Mihail', 'age': 30, 'gender': 'male'}
 ]
 print(len(persons))
-persons = list(persons)
-print(persons['gender'].count('female'))
+gender = [i['gender'] for i in persons]
+for k, v in Counter(gender).items():
+    print(f'{k}: {v}')
