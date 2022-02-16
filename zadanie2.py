@@ -45,8 +45,9 @@ for k, v in Counter(name).items():
 print('\nОтсортированный список всех возрастов без повторений:')
 age = [i['age'] for i in persons]
 print(set(sorted(age)))
-
-
-print('Имена мужчин старше 35 лет:')
-name_men_over_35 = [i['name'] for i in persons if i['age'] >= 35 and i['gender'] == 'male']
+print('Три самых встречающихся имени:')
+for k, v in Counter(name).most_common(3):
+    print(f'{k}', end=' ')
+print('\nИмена мужчин старше 35 лет:')
+name_men_over_35 = [i['name'] for i in persons if i['age'] > 35 and i['gender'] == 'male']
 print(name_men_over_35)
